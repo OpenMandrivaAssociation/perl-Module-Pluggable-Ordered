@@ -3,7 +3,7 @@
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 2
+Release:    3
 
 Summary:    Call module plugins in a specified order
 License:    GPL+ or Artistic
@@ -13,8 +13,8 @@ Source0:    http://www.cpan.org/modules/by-module/Module/%{upstream_name}-%{upst
 
 BuildRequires: perl(Module::Pluggable)
 BuildRequires: perl(UNIVERSAL::require)
+BuildRequires: perl-devel
 BuildArch: noarch
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 This module behaves exactly the same as 'Module::Pluggable', supporting all
@@ -44,16 +44,25 @@ init sequence they want to be called.
 %{make} test
 
 %install
-rm -rf %buildroot
 %makeinstall_std
 
-%clean
-rm -rf %buildroot
-
 %files
-%defattr(-,root,root)
 %doc Changes README
 %{_mandir}/man3/*
 %perl_vendorlib/*
 
 
+
+
+%changelog
+* Mon Apr 18 2011 Funda Wang <fwang@mandriva.org> 1.500.0-2mdv2011.0
++ Revision: 655058
+- rebuild for updated spec-helper
+
+* Sun Nov 29 2009 Jérôme Quelin <jquelin@mandriva.org> 1.500.0-1mdv2011.0
++ Revision: 471160
+- import perl-Module-Pluggable-Ordered
+
+
+* Sun Nov 29 2009 cpan2dist 1.5-1mdv
+- initial mdv release, generated with cpan2dist
