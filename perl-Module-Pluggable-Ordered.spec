@@ -2,14 +2,14 @@
 %define upstream_version 1.5
 
 Name:       perl-%{upstream_name}
-Version:    %perl_convert_version %{upstream_version}
-Release:    5
+Version:    %{upstream_version}
+Release:    6
 
 Summary:    Call module plugins in a specified order
 License:    GPL+ or Artistic
 Group:      Development/Perl
-Url:        https://search.cpan.org/dist/%{upstream_name}
-Source0:    http://www.cpan.org/modules/by-module/Module/%{upstream_name}-%{upstream_version}.tar.gz
+Url:        https://metacpan.org/dist/Module-Pluggable-Ordered
+Source0:    https://cpan.metacpan.org/authors/id/A/AP/APEIRON/Module-Pluggable-Ordered-%{upstream_version}.tar.gz
 
 BuildRequires:	make
 BuildRequires: perl(Module::Pluggable)
