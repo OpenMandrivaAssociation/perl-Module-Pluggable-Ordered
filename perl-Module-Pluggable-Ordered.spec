@@ -1,15 +1,13 @@
 %define upstream_name    Module-Pluggable-Ordered
-%define upstream_version 1.5
-
 Name:       perl-%{upstream_name}
-Version:    %{upstream_version}
-Release:    6
+Version:    1.5
+Release:    7
 
 Summary:    Call module plugins in a specified order
 License:    GPL+ or Artistic
 Group:      Development/Perl
 Url:        https://metacpan.org/dist/Module-Pluggable-Ordered
-Source0:    https://cpan.metacpan.org/authors/id/A/AP/APEIRON/Module-Pluggable-Ordered-%{upstream_version}.tar.gz
+Source0:    https://cpan.metacpan.org/authors/id/A/AP/APEIRON/Module-Pluggable-Ordered-%{version}.tar.gz
 
 BuildRequires:	make
 BuildRequires: perl(Module::Pluggable)
@@ -34,7 +32,7 @@ little like the System V init process, where files can specify where in the
 init sequence they want to be called.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
